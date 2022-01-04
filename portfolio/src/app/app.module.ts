@@ -20,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -47,6 +48,7 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatDialogModule,
     MatCardModule,
+    MatMenuModule,
     MatProgressBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

@@ -2,8 +2,27 @@
     <nav class="w-screen">
 
         <!-- FOR SM DEVICE -->
-        <div class="sm:hidden">
-            hamburger
+        <div class="sm:hidden text-right">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="goToHome">
+                    <span>Home</span>
+                </button>
+                <button mat-menu-item (click)="goToProject">
+                    <span>Project</span>
+                </button>
+                <button mat-menu-item (click)="goToAbout">
+                    <span>About</span>
+                </button>
+                <button mat-menu-item (click)="goToGame">
+                    <span>Play Game</span>
+                </button>
+                <button mat-menu-item (click)="openSecretKeyDialog()">
+                    <span>Secret Key</span>
+                </button>
+            </mat-menu>
         </div>
 
         <!-- FOR MD, LG & MORE DEVICE -->
