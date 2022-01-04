@@ -1,0 +1,46 @@
+<header>
+    <nav class="w-screen">
+
+        <!-- FOR SM DEVICE -->
+        <div class="sm:hidden">
+            hamburger
+        </div>
+
+        <!-- FOR MD, LG & MORE DEVICE -->
+        <div class="hidden sm:flex p-10">
+            <div class="mr-auto">
+                <img src="" alt="logo">
+            </div>
+            <div>
+                <ul class="flex">
+                    <li class="px-10">
+                        <a (click)="goToHome()" class="border-b-2 border-white hover:border-red-300 hover:text-gray-400">
+                            HOME
+                        </a>
+                    </li>
+                    <li class="px-10">
+                        <a (click)="goToProject()" class="border-b-2 border-white hover:border-red-300 hover:text-gray-400">
+                            PROJECT
+                        </a>
+                    </li>
+                    <li class="px-10">
+                        <a (click)="goToAbout()" class="border-b-2 border-white hover:border-red-300 hover:text-gray-400">
+                            ABOUT
+                        </a>
+                    </li>
+                    <li class="px-10">
+                        <a (click)="goToGame()" class="border-b-2 border-white hover:border-red-300 hover:text-gray-400">
+                            PLAY GAME
+                        </a>
+                    </li>
+                    <li class="px-10">
+                        <a (click)="openSecretKeyDialog()" class="border-b-2 border-white hover:border-red-300 hover:text-gray-400">
+                            SECRET KEY
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      
+    </nav>
+  </header>

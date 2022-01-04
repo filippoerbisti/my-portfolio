@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restart-game-dialog',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestartGameDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  goToHome() {
+    this.router.navigateByUrl('/home');
   }
 
 }
