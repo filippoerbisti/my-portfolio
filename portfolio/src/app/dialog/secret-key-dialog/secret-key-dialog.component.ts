@@ -22,11 +22,15 @@ export class SecretKeyDialogComponent implements OnInit {
 
   sendAnswer() {
     if (this.verifyKey == this.key_1 || this.verifyKey == this.key_2 || this.verifyKey == this.key_3 || this.verifyKey == this.key_4) {
-      this.msg = "First goal for any developer!"
+      this.msg = "First goal for any developer!";
     }
     else if(this.verifyKey != this.key_1 && this.verifyKey != this.key_2 && this.verifyKey != this.key_3 && this.verifyKey != this.key_4) {
-      this.msg = "Incorrect. Try again."
+      this.msg = "Incorrect. Try again.";
     }
+    else {
+      this.msg = '';
+    }
+    this.verifyKey = '';
   }
 
 }
