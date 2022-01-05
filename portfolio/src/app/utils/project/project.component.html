@@ -1,16 +1,17 @@
 <div class="w-2/3 mx-auto">
     <h1 class="font-light text-3xl text-center pb-5">MY PROJECT</h1>
-    <div class="grid grid-cols-3 gap-8">
-        <mat-card *ngFor="let project of projects">
+    <div class="md:grid sm:flex-col grid-cols-3 gap-8">
+        <mat-card *ngFor="let project of projects" class="mb-8">
             <mat-card-content>
                 <h1 class="text-xl">{{project.title | uppercase}}</h1>
                 <img src="" alt="">
                 <p>Description: 
                     <br>
                     {{project.description}}</p>
-                <p>Site: 
+                <p class="mt-2">Site: 
                     <br>
-                    <a [href]="'https://' + project.url">{{project.url}}</a></p>
+                    <a [href]="'https://' + project.url" class="text-blue-600 hover:underline">{{project.url}}</a>
+                </p>
                 <a [href]="'https://' + project.repo"><img src="../../../assets/github.png" alt="icon_github" class="w-6 h-6 ml-auto"></a>
             </mat-card-content>
         </mat-card>
