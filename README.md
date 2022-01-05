@@ -31,4 +31,4 @@ ng s
 
 5. Customize it as you like best and enjoy the project!
 
-Please respect all rights.©
+Please respect all rights.© Filippo Erbisti.
