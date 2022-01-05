@@ -29,11 +29,10 @@ export class SecretKeyDialogComponent implements OnInit {
     else if(this.verifyKey != this.key_1 && this.verifyKey != this.key_2 && this.verifyKey != this.key_3 && this.verifyKey != this.key_4) {
       this.msg = "Incorrect. Try again.";
       this.correct = false;
+      this.verifyKey = '';
     }
     else {
       this.msg = '';
     }
-    this.verifyKey = '';
   }
-
 }
