@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SecretKeyDialogComponent implements OnInit {
 
   verifyKey!: string;
+  correct!: boolean;
 
   key_1 = 'Hello World';
   key_2 = 'Hello world';
@@ -22,10 +23,12 @@ export class SecretKeyDialogComponent implements OnInit {
 
   sendAnswer() {
     if (this.verifyKey == this.key_1 || this.verifyKey == this.key_2 || this.verifyKey == this.key_3 || this.verifyKey == this.key_4) {
-      this.msg = "First goal for any developer!";
+      this.msg = "Congratulation! You achive the first goal of any developer!";
+      this.correct = true;
     }
     else if(this.verifyKey != this.key_1 && this.verifyKey != this.key_2 && this.verifyKey != this.key_3 && this.verifyKey != this.key_4) {
       this.msg = "Incorrect. Try again.";
+      this.correct = false;
     }
     else {
       this.msg = '';
