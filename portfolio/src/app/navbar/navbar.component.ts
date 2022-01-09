@@ -30,8 +30,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/about');
   }
 
-  goToGame() {
-    this.router.navigateByUrl('/memory-game');
+  goToLearn() {
+    this.router.navigateByUrl('/learn');
   }
 
   openSecretKeyDialog() {

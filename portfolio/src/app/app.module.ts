@@ -12,11 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './utils/project/project.component';
 import { AboutComponent } from './utils/about/about.component';
 import { FooterComponent } from './utils/footer/footer.component';
-import { GameCardComponent } from './utils/game-card/game-card.component';
 import { SecretKeyDialogComponent } from './dialog/secret-key-dialog/secret-key-dialog.component';
-import { RestartGameDialogComponent } from './dialog/restart-game-dialog/restart-game-dialog.component';
 import { NavbarComponent } from './navbar/navbar.component'; 
-import { PlayGameComponent } from './utils/play-game/play-game.component';
+import { LearnComponent } from './utils/learn/learn.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,19 +26,16 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectComponent,
     AboutComponent,
-    GameCardComponent,
     SecretKeyDialogComponent,
-    RestartGameDialogComponent,
     FooterComponent,
     NavbarComponent,
-    PlayGameComponent
+    LearnComponent
   ],
   imports: [
     BrowserModule,
