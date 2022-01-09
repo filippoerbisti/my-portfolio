@@ -1,20 +1,19 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Inject} from "@angular/core";
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'portfolio';
 
-  @Output() scrollToTop = new EventEmitter<void>();
+  constructor(@Inject(DOCUMENT) private document: Document) { }
 
-  constructor() { }
-
-  onScrollToTop(): void {
-    this.scrollToTop.emit();
+  goToTop() {
+    this.document.body.scrollTop = 0;
+    console.log('ciao');
   }
-
 }
