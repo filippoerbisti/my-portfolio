@@ -63,11 +63,25 @@
                 </ul>
         </div>
 
-        <div class="w-full flex justify-end mt-8">
-            <button mat-raised-button color="primary">
-                <a href="../../../assets/ERBISTI-FILIPPO-CV.pdf" download="ERBISTI-FILIPPO-CV.pdf">
-                    Download CV
-                </a>
+        <div class="w-full flex flex-col justify-center items-end mt-8">
+            <mat-form-field>
+                <mat-label>Select language of CV</mat-label>
+                <mat-select [(value)]="selected">
+                  <mat-option value="option1">English</mat-option>
+                  <mat-option value="option2">Italiano</mat-option>
+                </mat-select>
+            </mat-form-field>              
+            <button mat-raised-button color="primary" class="h-10">
+                <div *ngIf="selected === 'option1'">
+                    <a href="../../../assets/ERBISTI_FILIPPO_CV_ENG.pdf" download="ERBISTI_FILIPPO_CV_ENG.pdf">
+                        Download CV
+                    </a>
+                </div>
+                <div *ngIf="selected === 'option2'">
+                    <a href="../../../assets/ERBISTI_FILIPPO_CV_ITA.pdf" download="ERBISTI_FILIPPO_CV_ITA.pdf">
+                        Download CV
+                    </a>
+                </div>
             </button>
         </div>
     </div>

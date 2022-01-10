@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  selected = 'option1';
+
   constructor() { }
 
   ngOnInit(): void {
