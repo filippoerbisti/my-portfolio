@@ -101,7 +101,7 @@
             <input type="text" placeholder="Name and Surname" class="border-2 rounded-full px-2 my-2">
             <input type="email" placeholder="Email" class="border-2 rounded-full px-2 my-2">
             <textarea name="" id="" cols="30" rows="10" class="border-2 my-2 rounded"></textarea>
-            <button mat-raised-button color="primary" class="w-1/5">Send</button>
+            <button mat-raised-button type="submit" [disabled]="contactForm.invalid" color="primary" class="w-1/5">Send</button>
         </div>
     </div>
 
