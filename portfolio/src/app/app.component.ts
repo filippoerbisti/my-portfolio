@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Inject} from "@angular/core";
 import { DOCUMENT } from '@angular/common';
 
@@ -11,6 +11,10 @@ export class AppComponent {
   title = 'portfolio';
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
+
+  ngOnInit(): void {
+    console.log("Key: " + "%cHello World", "color: white;");
+  }
 
   goToTop() {
     this.document.body.scrollTop = 0;
