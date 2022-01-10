@@ -81,17 +81,17 @@
         <h1 class="font-light text-3xl text-center pb-5">CONTACT ME</h1>
         <!-- PC -->
         <div class="sm:flex sm:flex-row hidden">
-            <form [formGroup]='contactForm' name="contactForm" (ngSubmit)="onSubmit()" class="flex w-full">
+            <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)" class="flex w-full">
                 <div class="w-1/2">
-                  <textarea id='message' name="message" formControlName="message" placeholder="Messaggio" cols="30" rows="10" class="border-2 rounded px-2" required></textarea>
+                  <textarea id='comment' name="comment" formControlName="Comment" placeholder="Messaggio" cols="30" rows="10" class="form-control border-2 rounded px-2" required></textarea>
                 </div>
                 <div class="flex flex-col justify-center w-full mx-28">
                   <label>Name: </label>
-                  <input type='text' name="name" placeholder="Name" formControlName="name" class="border-2 rounded-full px-2 my-2" required/>
+                  <input type='text' name="name" placeholder="Name" formControlName="Fullname" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <label>Email: </label>
-                  <input type='email' name="email" placeholder="Email" formControlName="email" class="border-2 rounded-full px-2 my-2" required/>
+                  <input type='email' name="email" placeholder="Email" formControlName="Email" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <label>Message:</label>
-                  <button mat-raised-button type="submit" [disabled]="contactForm.invalid" color="primary" class="w-1/5">Send</button>
+                  <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
                 </div>
             </form>
         </div>
@@ -101,7 +101,7 @@
             <input type="text" placeholder="Name and Surname" class="border-2 rounded-full px-2 my-2">
             <input type="email" placeholder="Email" class="border-2 rounded-full px-2 my-2">
             <textarea name="" id="" cols="30" rows="10" class="border-2 my-2 rounded"></textarea>
-            <button mat-raised-button type="submit" [disabled]="contactForm.invalid" color="primary" class="w-1/5">Send</button>
+            <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
         </div>
     </div>
 

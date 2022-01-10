@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 import { learns } from 'src/app/share/store/learn-data-store';
 import { Pipe } from '@angular/compiler/src/core';
-
-import { NetlifyFormsService } from '../netlify-forms/netlify-forms.service';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-home',
@@ -19,26 +18,30 @@ export class HomeComponent implements OnInit {
   color: ThemePalette = 'primary';
   mode: ProgressBarMode = 'determinate';
 
-  contactForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.email, Validators.required]],
-    message: ['', Validators.required],
-  });
+  FormData!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
-    private netlifyForms: NetlifyFormsService
-  ) { }
+    private builder: FormBuilder,
+    private contact: ContactService
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.FormData = this.builder.group({
+    Fullname: new FormControl('', [Validators.required]),
+    Email: new FormControl('', [Validators.required, Validators.email]),
+    Comment: new FormControl('', [Validators.required])})
   }
 
-  onSubmit() {
-    this.netlifyForms.submitFeedback(this.contactForm.value).subscribe(
-       () => {
-         this.contactForm.reset();
-       },
-    );
+  onSubmit(FormData: string) {
+    console.log(FormData)
+    this.contact.PostMessage(FormData)
+      .subscribe(response => {
+        location.href = 'https://mailthis.to/confirm'
+        console.log(response)
+      }, error => {
+        console.warn(error.responseText)
+        console.log({ error })
+      })
   }
 
 }

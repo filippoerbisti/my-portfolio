@@ -8,6 +8,9 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NetlifyFormsService {
+  submitFeedbackEntry(value: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private http: HttpClient
@@ -15,7 +18,7 @@ export class NetlifyFormsService {
 
   submitFeedback(fbEntry: Contact): Observable <any> {
     const entry = new HttpParams({ fromObject: {
-      'form-name': 'ContactForm',
+      'form-name': 'contactForm',
       ...fbEntry,
     }});
 
