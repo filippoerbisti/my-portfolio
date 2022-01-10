@@ -1,34 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { learns } from 'src/app/share/store/learn-data-store';
 
 @Component({
   selector: 'app-learn',
   templateUrl: './learn.component.html',
-  styleUrls: ['./learn.component.css'],
-  animations: [
-    trigger('flipState', [
-      state('active', style({
-        transform: 'rotateY(179deg)'
-      })),
-      state('inactive', style({
-        transform: 'rotateY(0)'
-      })),
-      transition('active => inactive', animate('500ms ease-out')),
-      transition('inactive => active', animate('500ms ease-in'))
-    ])
-  ]
+  styleUrls: ['./learn.component.css']
 })
 export class LearnComponent implements OnInit {
 
+  toggleProperty = false;
+
+  public learns:any = learns;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  flip: string = 'inactive';
+  toggle(learn: any) {
+    learn.property = !learn.property;
+  }
 
-  toggleFlip() {
-    this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
+  values = '';
+
+  onKey(event: any) {
+    this.values = event.target.value;
   }
 
 }

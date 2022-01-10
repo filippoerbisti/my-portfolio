@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { FormBuilder, Validators } from '@angular/forms';
+import { learns } from 'src/app/share/store/learn-data-store';
+import { Pipe } from '@angular/compiler/src/core';
 
 import { NetlifyFormsService } from '../netlify-forms/netlify-forms.service';
-
 
 @Component({
   selector: 'app-home',
@@ -13,18 +14,10 @@ import { NetlifyFormsService } from '../netlify-forms/netlify-forms.service';
 })
 export class HomeComponent implements OnInit {
 
+  public learns:any = learns;
+
   color: ThemePalette = 'primary';
   mode: ProgressBarMode = 'determinate';
-
-  angularSkill = 85;
-  vueSkill = 70;
-  cssSkill = 70;
-  typescriptSkill = 75;
-
-  sqlSkill = 80;
-  laravelSkill = 80;
-  phpSkill = 75;
-  csharpSkill = 50;
 
   contactForm = this.fb.group({
     name: ['', Validators.required],

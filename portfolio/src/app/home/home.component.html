@@ -18,97 +18,20 @@
         </h1>
     </div>
 
-    <div class="w-1/3 mx-auto border-b-2 my-6 border-gray-400"></div>
+    <div class="w-1/3 mx-auto border-b-2 my-6 border-blue-800"></div>
 
     <!-- Skill Section -->
     <div class="w-2/3 mx-auto">
         <h1 class="font-light text-3xl text-center">SKILLS</h1>
         <div class="grid grid-cols-2 gap-8">
-            <div>
-                <h2 class="text-lg">Angular <span class="font-bold">{{angularSkill}} %</span></h2>
+            <div *ngFor="let learn of learns">
+                <h2 class="text-lg">{{learn.title}} <span class="font-bold">{{learn.skill}} %</span></h2>
                 <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/angular.png" alt="icon_angular">
+                    <img class="w-10 h-10 mr-2" [src]="learn.img" alt="learn.alt">
                     <mat-progress-bar
                         [color]="color"
                         [mode]="mode"
-                        [value]="angularSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">Laravel <span class="font-bold">{{laravelSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/laravel.png" alt="icon_laravel">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="laravelSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">Vue.js <span class="font-bold">{{vueSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/vue.png" alt="icon_vue">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="vueSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">MYSQL <span class="font-bold">{{sqlSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/mysql.png" alt="icon_mysql">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="sqlSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">CSS <span class="font-bold">{{cssSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/css.png" alt="icon_css">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="cssSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">PHP <span class="font-bold">{{phpSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/php.png" alt="icon_php">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="phpSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">TS <span class="font-bold">{{typescriptSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/typescript.png" alt="icon_typescript">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="typescriptSkill">
-                    </mat-progress-bar>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-lg">C# <span class="font-bold">{{csharpSkill}} %</span></h2>
-                <div class="flex items-center">
-                    <img class="w-10 h-10 mr-2" src="../../assets/third-part/csharp.png" alt="icon_c#">
-                    <mat-progress-bar
-                        [color]="color"
-                        [mode]="mode"
-                        [value]="csharpSkill">
+                        [value]="learn.skill">
                     </mat-progress-bar>
                 </div>
             </div>
@@ -116,7 +39,7 @@
  
     </div>
 
-    <div class="w-1/3 mx-auto border-b-2 my-6 border-gray-400"></div>
+    <div class="w-1/3 mx-auto border-b-2 my-6 border-blue-800"></div>
 
     <!-- Service Section -->
     <div class="w-2/3 mx-auto">
@@ -151,7 +74,7 @@
         </div>
     </div>
 
-    <div class="w-1/3 mx-auto border-b-2 my-6 border-gray-400"></div>
+    <div class="w-1/3 mx-auto border-b-2 my-6 border-blue-800"></div>
 
     <!-- Contact Me -->
     <div class="w-2/3 mx-auto">
@@ -168,7 +91,7 @@
                   <label>Email: </label>
                   <input type='email' name="email" placeholder="Email" formControlName="email" class="border-2 rounded-full px-2 my-2" required/>
                   <label>Message:</label>
-                  <button mat-button type="submit" [disabled]="contactForm.invalid" color="primary" class="bg-red-200 w-1/5">Send</button>
+                  <button mat-raised-button type="submit" [disabled]="contactForm.invalid" color="primary" class="w-1/5">Send</button>
                 </div>
             </form>
         </div>
@@ -178,7 +101,7 @@
             <input type="text" placeholder="Name and Surname" class="border-2 rounded-full px-2 my-2">
             <input type="email" placeholder="Email" class="border-2 rounded-full px-2 my-2">
             <textarea name="" id="" cols="30" rows="10" class="border-2 my-2 rounded"></textarea>
-            <button mat-button color="primary" class="bg-red-200 w-1/5">Send</button>
+            <button mat-raised-button color="primary" class="w-1/5">Send</button>
         </div>
     </div>
 

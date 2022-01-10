@@ -1,12 +1,26 @@
 <div class="w-2/3 mx-auto">
     <h1 class="font-light text-3xl text-center pb-5">LEARN</h1>
-    <p>in progress</p>
-    <div class="tp-wrapper">
-        <div class="tp-box w-20 h-full w-full" (click)="toggleFlip()" [@flipState]="flip">
-            <div class="tp-box__side tp-box__front">Angular
-            </div>
-            <div class="tp-box__side tp-box__back">
-                <img src="../../../assets/third-part/angular.png" alt="">
+    <div class="flex flex-col sm:grid sm:grid-cols-4 gap-4">
+        <div *ngFor="let learn of learns" class="container">
+            <div [ngClass]="learn.property ? 'flipped' : ''" class="card">
+                <div class="front cursor-pointer">
+                    <img [src]=learn.img alt="{{learn.alt}}" class="h-24 w-24 bg-white">
+                    <p>{{ learn.title }}</p>
+                    <div class="arrow-icon" (click)="toggle(learn)">
+                        <span class="iconify text-black h-8 w-8" data-icon="ion:caret-forward-circle-outline"></span>
+                    </div>
+                </div>
+                <div class="back cursor-pointer" >
+                    <div class="mx-4">
+                        <p class="italic">Test it!</p>
+                        <input type="text" (keyup)="onKey($event)" class="border-2 rounded border-blue-800 w-full">
+                        <p>Output:</p>
+                        <p>{{values}}</p>
+                    </div>
+                    <div class="arrow-icon" (click)="toggle(learn)">
+                        <span class="iconify text-black h-8 w-8" data-icon="ion:caret-forward-circle-outline"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
