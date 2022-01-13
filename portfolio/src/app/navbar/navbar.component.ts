@@ -30,9 +30,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/about');
   }
 
-  goToLearn() {
-    this.router.navigateByUrl('/learn');
-  }
+  // goToLearn() {
+  //   this.router.navigateByUrl('/learn');
+  // }
 
   openSecretKeyDialog() {
     const dialogRef = this.dialog.open(SecretKeyDialogComponent);

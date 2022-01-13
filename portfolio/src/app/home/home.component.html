@@ -22,10 +22,13 @@
 
     <!-- Skill Section -->
     <div class="w-2/3 mx-auto">
-        <h1 class="font-light text-3xl text-center">SKILLS</h1>
+        <h1 class="font-light text-3xl text-center pb-5">SKILLS</h1>
         <div class="grid grid-cols-2 gap-8">
             <div *ngFor="let learn of learns">
-                <h2 class="text-lg">{{learn.title}} <span class="font-bold">{{learn.skill}} %</span></h2>
+                <div class="flex">
+                    <h2 class="text-lg mr-auto">{{learn.title}}</h2>
+                    <h2 class="text-lg font-bold">{{learn.skill}} %</h2>
+                </div>
                 <div class="flex items-center">
                     <img class="w-10 h-10 mr-2" [src]="learn.img" alt="learn.alt">
                     <mat-progress-bar
@@ -79,18 +82,18 @@
     <!-- Contact Me -->
     <div class="w-2/3 mx-auto">
         <h1 class="font-light text-3xl text-center pb-5">CONTACT ME</h1>
+
         <!-- PC -->
         <div class="sm:flex sm:flex-row hidden">
-            <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)" class="flex w-full">
+            <form [formGroup]="FormData" (ngSubmit)="onSubmit()" class="flex w-full">
                 <div class="w-1/2">
-                  <textarea id='comment' name="comment" formControlName="Comment" placeholder="Messaggio" cols="30" rows="10" class="form-control border-2 rounded px-2" required></textarea>
+                  <textarea id='comment' name="Comment" formControlName="Comment" placeholder="Messaggio" cols="30" rows="10" class="form-control border-2 rounded px-2" required></textarea>
                 </div>
                 <div class="flex flex-col justify-center w-full mx-28">
                   <label>Name: </label>
-                  <input type='text' name="name" placeholder="Name" formControlName="Fullname" class="form-control border-2 rounded-full px-2 my-2" required/>
+                  <input type='text' name="Name" placeholder="Name" formControlName="Fullname" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <label>Email: </label>
-                  <input type='email' name="email" placeholder="Email" formControlName="Email" class="form-control border-2 rounded-full px-2 my-2" required/>
-                  <label>Message:</label>
+                  <input type='email' name="Email" placeholder="Email" formControlName="Email" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
                 </div>
             </form>

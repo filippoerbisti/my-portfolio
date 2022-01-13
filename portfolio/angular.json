@@ -36,7 +36,13 @@
             ],
             "scripts": [],
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            "ngswConfigPath": "ngsw-config.json",
+            "allowedCommonJsDependencies": [
+              "util",
+              "assert",
+              "https",
+              "stream"
+            ]
           },
           "configurations": {
             "production": {

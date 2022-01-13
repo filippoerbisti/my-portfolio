@@ -3,8 +3,9 @@ import { ThemePalette } from '@angular/material/core';
 import { ProgressBarMode } from '@angular/material/progress-bar';
 import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 import { learns } from 'src/app/share/store/learn-data-store';
-import { Pipe } from '@angular/compiler/src/core';
-import { ContactService } from './contact.service';
+import { MatSnackBar, MatSnackBarHorizontalPosition } from '@angular/material/snack-bar';
+import { ApiKey } from 'src/app/home/api_key';
+// import * as SibApiV3Sdk from '@sendinblue/client';
 
 @Component({
   selector: 'app-home',
@@ -14,15 +15,19 @@ import { ContactService } from './contact.service';
 export class HomeComponent implements OnInit {
 
   public learns:any = learns;
+  // private SibApiV3Sdk:any = SibApiV3Sdk;
 
   color: ThemePalette = 'primary';
   mode: ProgressBarMode = 'determinate';
 
-  FormData!: FormGroup;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  durationInSeconds = 3;
 
+  FormData!: FormGroup;
+  
   constructor(
     private builder: FormBuilder,
-    private contact: ContactService
+    private snackBar: MatSnackBar,
     ) { }
 
   ngOnInit() {
@@ -32,16 +37,51 @@ export class HomeComponent implements OnInit {
     Comment: new FormControl('', [Validators.required])})
   }
 
-  onSubmit(FormData: string) {
-    console.log(FormData)
-    this.contact.PostMessage(FormData)
-      .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm'
-        console.log(response)
-      }, error => {
-        console.warn(error.responseText)
-        console.log({ error })
-      })
+  onSubmit() {
+    // var SibApiV3Sdk = require('@sendinblue/client');
+    // var defaultClient = SibApiV3Sdk.ApiClient.instance;
+
+    // // Configure API key authorization: api-key
+    // var apiKey = defaultClient.authentications['api-key'];
+    // apiKey.apiKey = ApiKey;
+
+    // // Uncomment below two lines to configure authorization using: partner-key
+    // // var partnerKey = defaultClient.authentications['partner-key'];
+    // // partnerKey.apiKey = 'YOUR API KEY';
+
+    // var apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+
+    // var sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail(); // SendSmtpEmail | Values to send a transactional email
+
+    // sendSmtpEmail = {
+    //     to: [{
+    //         email: 'filippo.erbisti@gmail.com',
+    //         name: 'John Doe'
+    //     }],
+    //     templateId: 59,
+    //     params: {
+    //         name: 'John',
+    //         surname: 'Doe'
+    //     },
+    //     headers: {
+    //         'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2'
+    //     }
+    // };
+
+    // apiInstance.sendTransacEmail(sendSmtpEmail).then((data: any) => {
+    //   console.log('API called successfully. Returned data: ' + data);
+    //   this.snackBar.open("Email inviata con successo!", '', {
+    //     horizontalPosition: this.horizontalPosition,
+    //     duration: this.durationInSeconds * 1000
+    //   });
+    // }, (error: any) => {
+    //   console.error(error);
+    //   this.snackBar.open("Email inviata con successo!", '', {
+    //     horizontalPosition: this.horizontalPosition,
+    //     duration: this.durationInSeconds * 1000
+    //   });
+    // });
+    
   }
 
 }

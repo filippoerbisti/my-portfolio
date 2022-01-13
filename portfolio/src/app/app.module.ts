@@ -24,9 +24,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ContactService } from './home/contact.service';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { ContactService } from './home/contact.service';
     MatSelectModule,
     MatProgressBarModule,
     FormsModule,
+    MatSnackBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -61,7 +63,7 @@ import { ContactService } from './home/contact.service';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [ContactService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
