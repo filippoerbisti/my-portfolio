@@ -5,7 +5,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angula
 import { learns } from 'src/app/share/store/learn-data-store';
 import { MatSnackBar, MatSnackBarHorizontalPosition } from '@angular/material/snack-bar';
 import { Pipe, PipeTransform } from '@angular/core';
-import { ApiKey } from 'src/app/home/api_key';
+// import { ApiKey } from 'src/app/home/api_key';
 // import * as SibApiV3Sdk from '@sendinblue/client';
 
 @Component({
@@ -57,12 +57,12 @@ export class HomeComponent implements OnInit {
     // sendSmtpEmail = {
     //     to: [{
     //         email: 'filippo.erbisti@gmail.com',
-    //         name: 'John Doe'
+    //         name: 'Filippo Erbisti'
     //     }],
     //     templateId: 59,
     //     params: {
-    //         name: 'John',
-    //         surname: 'Doe'
+    //         name: 'Name1',
+    //         surname: 'Surname1'
     //     },
     //     headers: {
     //         'X-Mailin-custom': 'custom_header_1:custom_value_1|custom_header_2:custom_value_2'
