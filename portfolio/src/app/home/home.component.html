@@ -88,23 +88,21 @@
         <div class="flex flex-col sm:flex-row">
             <form [formGroup]="FormData" (ngSubmit)="onSubmit()" class="w-full flex flex-col sm:flex-row">
                 
-                <div class="flex flex-col justify-center sm:w-1/2 sm:px-16">
+                <div class="flex flex-col justify-start sm:w-1/2 sm:px-16">
                   <label>Full Name: <span class="text-red-500"><sup>*</sup></span></label>
                   <input type='text' name="name" placeholder="Full Name" formControlName="Fullname" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <label>Company: </label>
                   <input type='text' name="company" placeholder="Company" formControlName="Company" class="form-control border-2 rounded-full px-2 my-2" required/>
                   <label>Email: <span class="text-red-500"><sup>*</sup></span></label>
                   <input type='email' name="email" placeholder="Email" formControlName="Email" class="form-control border-2 rounded-full px-2 my-2" required/>
-                  <div class="sm:flex hidden mt-4">
-                    <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
-                  </div>
                 </div>
-                <div class="sm:w-1/2 flex justify-center">
+                <div class="sm:w-1/2 flex flex-col justify-center">
                     <textarea id='comment' name="Comment" formControlName="Comment" placeholder="Message" cols="30" rows="10" class="form-control border-2 rounded px-2" required></textarea>
+                    <div class="flex justify-end mt-4">
+                        <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
+                    </div>
                 </div>
-                <div class="flex justify-end sm:hidden mt-4">
-                    <button mat-raised-button type="submit" [disabled]="!FormData.valid" color="primary" class="w-1/5">Send</button>
-                </div>
+                
             </form>
         </div>
     </div>
