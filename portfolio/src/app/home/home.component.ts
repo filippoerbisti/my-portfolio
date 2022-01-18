@@ -39,6 +39,11 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
+    this.snackBar.open("Error, please send email", 'X', {
+      horizontalPosition: this.horizontalPosition,
+      duration: this.durationInSeconds * 1000
+    });
+
     // var SibApiV3Sdk = require('@sendinblue/client');
     // var defaultClient = SibApiV3Sdk.ApiClient.instance;
 
