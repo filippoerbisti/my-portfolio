@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'project', component: ProjectComponent },
   { path: 'about', component: AboutComponent },
   { path: 'learn', component: LearnComponent },
-  { path: '',   redirectTo: 'home'},
+  { path: '',   redirectTo: '/home'},
 ];
 
 @NgModule({

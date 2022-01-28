@@ -22,7 +22,6 @@
     "@angular/router": "~13.0.0",
     "@angular/service-worker": "~13.0.0",
     "@sendinblue/client": "^3.1.0",
-    "assert": "^2.0.0",
     "formidable": "^3.2.1",
     "https-browserify": "^1.0.0",
     "rxjs": "~7.4.0",
@@ -31,7 +30,6 @@
     "stream-http": "^3.2.0",
     "superagent": "^7.0.2",
     "tslib": "^2.3.0",
-    "util": "^0.12.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
