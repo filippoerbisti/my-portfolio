@@ -32,3 +32,8 @@ ng s
 5. Customize it as you like best and enjoy the project!
 
 Please respect all rights.© Filippo Erbisti.
+
+# Other:
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=filippoerbisti&layout=compact&langs_count=8)](https://github.com/filippoerbisti/my-portfolio)
+
+![Filippo Erbisti's GitHub stats](https://github-readme-stats.vercel.app/api?username=filippoerbisti&show_icons=true&theme=synthwave)
