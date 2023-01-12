@@ -3,7 +3,7 @@ This is the repository of my own Portfolio Online.
 
 Here the link:
 
-**https://filippoerbisti.netifly.app**
+**https://filippoerbisti.netlify.app**
 
 ------------------------------------------------------------
 
